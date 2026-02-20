@@ -5,25 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 17:12:09 by skaynar           #+#    #+#             */
-/*   Updated: 2024/11/06 17:13:58 by skaynar          ###   ########.fr       */
+/*   Created: 2026/02/20 12:17:41 by skaynar           #+#    #+#             */
+/*   Updated: 2026/02/20 18:12:21 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <unistd.h>
 # include <stdlib.h>
+# include <unistd.h>
 
-int		ft_printf(const char *format, ...);
+typedef struct s_lst
+{
+    size_t num;
+}           t_lst;
 
-void	ft_print_char(int c, size_t *counter);
-void	ft_print_hexa(unsigned long n, char c, size_t *counter);
-void	ft_print_int(int n, size_t *counter);
-void	ft_print_nbr(int nb, size_t *counter);
-void	ft_print_str(char *str, size_t *counter);
-void	ft_print_ptr(unsigned long ptr, size_t *count);
+void for_str(char *str, t_lst *a, int i);
+void	for_char(int c, t_lst *a);
+void for_nbr(int i, t_lst *a);
+void for_ptr(unsigned long ptr, t_lst *a);
+void for_int(int i, t_lst *a);
+void for_hexa(unsigned long i, char c, t_lst *a);
+
+
 
 #endif
