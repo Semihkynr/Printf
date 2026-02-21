@@ -6,18 +6,18 @@
 /*   By: skaynar <skaynar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 18:26:38 by skaynar           #+#    #+#             */
-/*   Updated: 2026/02/20 18:26:48 by skaynar          ###   ########.fr       */
+/*   Updated: 2026/02/21 10:30:44 by skaynar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void for_str(char *str, t_lst *a, int i)
+void	for_str(char *str, t_lst *a, int i)
 {
 	if (!str)
 	{
 		for_str("(null)", a, 0);
-		return;
+		return ;
 	}
 	while (str[i] != '\0')
 	{
@@ -26,13 +26,13 @@ void for_str(char *str, t_lst *a, int i)
 	}
 }
 
-void for_char(int c, t_lst *a)
+void	for_char(int c, t_lst *a)
 {
 	write(1, &c, 1);
 	a->num++;
 }
 
-void for_nbr(int i, t_lst *a)
+void	for_nbr(int i, t_lst *a)
 {
 	if (i == -2147483648)
 	{
